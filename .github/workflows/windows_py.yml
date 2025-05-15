@@ -1,20 +1,12 @@
-name: Run Python Script on Self-Hosted Runner
+name: Simple Echo Workflow
 
 on:
   workflow_dispatch:
 
 jobs:
-  run-python:
+  echo-job:
     runs-on: [self-hosted, LAPTOP-JCA9TBLR]
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Run script
-        run: python script.py
+      - name: Echo message
+        run: echo "Hello from GitHub Actions on self-hosted runner!"
