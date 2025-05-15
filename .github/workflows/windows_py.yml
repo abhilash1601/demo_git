@@ -1,12 +1,11 @@
-name: Simple Echo Workflow
+name: Run Python Script on Self-Hosted Runner
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # This makes it manually triggerable
 
 jobs:
-  echo-job:
-    runs-on: [self-hosted, LAPTOP-JCA9TBLR]
-
+  run-python:
+    runs-on: self-hosted  # 💡 THIS is the key line
     steps:
-      - name: Echo message
-        run: echo "Hello from GitHub Actions on self-hosted runner!"
+      - name: Echo Hello
+        run: echo "Hello from self-hosted runner!"
