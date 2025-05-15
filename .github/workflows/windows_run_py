@@ -1,0 +1,15 @@
+name: Run Python Script on Self-Hosted Runner
+
+on:
+  workflow_dispatch:  # Trigger manually via GitHub UI
+
+jobs:
+  run-python:
+    runs-on: self-hosted  # Runs on your Windows self-hosted runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Python script
+        run: python script.py
